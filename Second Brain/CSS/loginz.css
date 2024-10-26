@@ -1,0 +1,121 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1a1a1a, #1a237e);
+    color: white;
+}
+
+.login-container {
+    background-color: #222;
+    padding: 40px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.login-container h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.login-container h1 span {
+    color: #4b6cb7;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+    font-size: 14px;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #4b6cb7;
+    background-color: #333;
+    color: white;
+}
+
+.forgot-password {
+    display: block;
+    text-align: right;
+    color: #c97b63;
+    font-size: 12px;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(90deg, #4b6cb7, #182848);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(90deg, #3a5fa4, #101c3e);
+}
+
+#successMessage, #errorMessage {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 400px;
+    padding: 15px;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+#successMessage {
+    background: linear-gradient(90deg, #4caf50, #2e7d32);
+}
+
+#successMessage a#okLink {
+    color: white;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#successMessage a#okLink:hover {
+    color: #a5d6a7;
+}
+
+#errorMessage {
+    background: linear-gradient(90deg, #e53935, #b71c1c);
+}
+

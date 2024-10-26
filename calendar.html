@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="stylesheet" href="CSS/calendarzin.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário com Anotações</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="calendar">
+    <div class="header">
+        <button id="prev-month">&#10094;</button>
+        <div id="month-year"></div>
+        <button id="next-month">&#10095;</button>
+    </div>
+    <div class="weekdays">
+        <div>DOM</div><div>SEG</div><div>TER</div><div>QUA</div><div>QUI</div><div>SEX</div><div>SAB</div>
+    </div>
+    <div id="days" class="days"></div>
+</div>
+
+<!-- Modal para adicionar anotações -->
+<div id="noteModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Adicionar Anotação - <span id="selected-date"></span></h2>
+        <textarea id="note-text" rows="4" placeholder="Escreva sua anotação..."></textarea>
+        <button id="save-note">Salvar</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

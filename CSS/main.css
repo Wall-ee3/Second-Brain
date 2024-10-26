@@ -23,7 +23,7 @@ body {
 
 .header h1 {
     margin: 10px 0;
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 .quote {
@@ -40,7 +40,7 @@ body {
 }
 
 .menu-item {
-    background-color: #000000;
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 10px;
     width: 150px;
@@ -61,3 +61,4 @@ iframe {
     height: 80px;
     border: none;
 }
+

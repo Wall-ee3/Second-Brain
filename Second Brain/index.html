@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second Brain</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <style>
+        .dashboard {
+            display: flex;
+        }
+
+        .sidebar {
+            width: 80px;
+            background-color: #1a2236;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            height: 100vh;
+        }
+
+        .sidebar nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .header .welcome h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .header .search input {
+            padding: 5px 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .header .profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .calendar {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            max-width: 300px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .calendar .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .calendar .header button {
+            background-color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5em;
+        }
+
+        #month-year {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .calendar .weekdays, .calendar .days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+        }
+
+        .calendar .weekdays div {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .calendar .days div {
+            padding: 10px;
+            background-color: #f4f4f4;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .calendar .days div:hover {
+            background-color: #ccc;
+        }
+
+        .selected {
+            background-color: #00bfff;
+            color: white;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 400px;
+        }
+
+        .close {
+            color: red;
+            float: right;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <nav>
+                <a href="#" class="active">
+                    <lord-icon src="https://cdn.lordicon.com/cnpvyndp.json" trigger="hover" colors="primary:#ffffff" style="width:40px;height:40px"></lord-icon>
+                </a>
+                <a href="#">
+                    <lord-icon src="https://cdn.lordicon.com/jkzgajyr.json" trigger="hover" colors="primary:#ffffff" style="width:40px;height:40px"></lord-icon>
+                </a>
+                <a href="#">
+                    <lord-icon src="https://cdn.lordicon.com/abfverha.json" trigger="hover" colors="primary:#ffffff" style="width:40px;height:40px"></lord-icon>
+                </a>
+                <a href="#">
+                    <lord-icon src="https://cdn.lordicon.com/lecprnjb.json" trigger="hover" colors="primary:#ffffff" style="width:40px;height:40px"></lord-icon>
+                </a>
+                <a href="#">
+                    <lord-icon src="https://cdn.lordicon.com/ercyvufy.json" trigger="hover" colors="primary:#ffffff" style="width:40px;height:40px"></lord-icon>
+                </a>
+                <a href="#">
+                    <lord-icon src="https://cdn.lordicon.com/lyrrgrsl.json" trigger="hover" colors="primary:#ffffff" style="width:40px;height:40px"></lord-icon>
+                </a>
+                <a href="#">
+                    <lord-icon src="https://cdn.lordicon.com/vduvxizq.json" trigger="hover" colors="primary:#ffffff" style="width:40px;height:40px"></lord-icon>
+                </a>
+            </nav>
+        </aside>
+        <main class="content">
+            <header class="header">
+                <div class="welcome">
+                    <h1>Welcome, Admin!</h1>
+                    <p>Here is your agenda for today</p>
+                </div>
+                <div class="search">
+                    <input type="text" placeholder="Search">
+                </div>
+                <div class="profile">
+                    <img src="images/profile.jpg" alt="Profile">
+                </div>
+            </header>
+            <section class="dashboard-grid">
+                <div class="card">
+                    <h2>Card 1</h2>
+                    <p>Informações do Card 1.</p>
+                </div>
+                <div class="card">
+                    <h2>Card 2</h2>
+                    <p>Informações do Card 2.</p>
+                </div>
+                <div class="card">
+                    <h2>Card 3</h2>
+                    <p>Informações do Card 3.</p>
+                </div>
+                <div class="calendar">
+                    <div class="header">
+                        <button id="prev-month">&#10094;</button>
+                        <div id="month-year"></div>
+                        <button id="next-month">&#10095;</button>
+                    </div>
+                    <div class="weekdays">
+                        <div>DOM</div><div>SEG</div><div>TER</div><div>QUA</div><div>QUI</div><div>SEX</div><div>SAB</div>
+                    </div>
+                    <div id="days" class="days"></div>
+                </div>
+
+                <div id="noteModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h2>Adicionar Anotação - <span id="selected-date"></span></h2>
+                        <textarea id="note-text" rows="4" placeholder="Escreva sua anotação..."></textarea>
+                        <button id="save-note">Salvar</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        const monthYear = document.getElementById('month-year');
+        const daysContainer = document.getElementById('days');
+        const prevMonthButton = document.getElementById('prev-month');
+        const nextMonthButton = document.getElementById('next-month');
+        const noteModal = document.getElementById('noteModal');
+        const closeModalButton = document.querySelector('.close');
+        const selectedDateElement = document.getElementById('selected-date');
+        const noteText = document.getElementById('note-text');
+        const saveNoteButton = document.getElementById('save-note');
+
+        let currentDate = new Date();
+        let notes = {};
+
+        function renderCalendar() {
+            const currentMonth = currentDate.getMonth();
+            const currentYear = currentDate.getFullYear();
+            
+            monthYear.textContent = currentDate.toLocaleDateString('pt-BR', { month: 'long', year: 'numeric' });
+
+            const firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
+            const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+            daysContainer.innerHTML = '';
+
+            for (let i = 0; i < firstDayOfMonth; i++) {
+                const emptyDiv = document.createElement('div');
+                daysContainer.appendChild(emptyDiv);
+            }
+
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dayDiv = document.createElement('div');
+                dayDiv.textContent = day;
+
+                dayDiv.addEventListener('click', () => openModal(day));
+
+                if (notes[`${day}/${currentMonth + 1}/${currentYear}`]) {
+                    dayDiv.classList.add('selected');
+                }
+
+                daysContainer.appendChild(dayDiv);
+            }
+        }
+
+        function openModal(day) {
+            const currentMonth = currentDate.getMonth() + 1;
+            const currentYear = currentDate.getFullYear();
+            const selectedDate = `${day}/${currentMonth}/${currentYear}`;
+            selectedDateElement.textContent = selectedDate;
+            noteText.value = notes[selectedDate] || '';
+            noteModal.style.display = 'block';
+        }
+
+        function closeModal() {
+            noteModal.style.display = 'none';
+        }
+
+        function saveNote() {
+            const noteDate = selectedDateElement.textContent;
+            const noteContent = noteText.value;
+
+            if (noteContent) {
+                notes[noteDate] = noteContent;
+            } else {
+                delete notes[noteDate];
+            }
+
+            renderCalendar();
+            closeModal();
+        }
+
+        prevMonthButton.addEventListener('click', () => {
+            currentDate.setMonth(currentDate.getMonth() - 1);
+            renderCalendar();
+        });
+
+        nextMonthButton.addEventListener('click', () => {
+            currentDate.setMonth(currentDate.getMonth() + 1);
+            renderCalendar();
+        });
+
+        closeModalButton.addEventListener('click', closeModal);
+        saveNoteButton.addEventListener('click', saveNote);
+
+        renderCalendar();
+    </script>
+</body>
+</html>

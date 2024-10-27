@@ -1,0 +1,30 @@
+1. Descrição Geral
+Este projeto foi desenvolvido para criar uma página web pessoal chamada "Second Brain", com o objetivo de ajudar o usuário a organizar sua vida acadêmica, financeira e emocional. A página serve como um centro de organização, integrando recursos de aprendizado, finanças e autocuidado em uma interface simples e intuitiva.
+
+2. Arquivos
+index.html: Estrutura HTML da página.
+styles.css: Estilização da página.
+3. Funcionalidades Principais
+Cabeçalho Personalizado: Contém o logo do usuário e o título "Second Brain" para refletir o propósito de auto-organização.
+Citação Motivacional: Inclui uma citação inspiradora para motivar o usuário.
+Incorporação do Spotify: Um player de música embutido para ouvir faixas diretamente da página, ajudando o usuário a manter o foco ou relaxar.
+Menu Organizado: Três botões com ícones que representam áreas importantes:
+DIO: Plataforma de aprendizado e desenvolvimento.
+English: Ferramenta para melhorar as habilidades no idioma inglês.
+Senac: Links para cursos ou recursos educacionais.
+4. Objetivo
+A página é projetada para centralizar ferramentas e lembretes que ajudam o usuário a equilibrar aspectos essenciais da vida, permitindo uma visão clara de suas responsabilidades acadêmicas, metas financeiras e saúde emocional.
+
+5. Como Usar
+Abra o arquivo index.html em qualquer navegador moderno.
+O arquivo styles.css aplica o estilo visual, portanto, ambos devem estar no mesmo diretório.
+Substitua os ícones e links de exemplo pelos recursos e ferramentas de sua preferência.
+6. Design e Estilo
+O design minimalista utiliza uma paleta de cores escuras com destaques em amarelo e preto para criar uma interface limpa e moderna. As áreas interativas, como o menu, foram projetadas para serem acessíveis e visualmente agradáveis​(index)​(styles).
+
+7. Personalização
+O usuário pode personalizar facilmente os links, ícones e o player do Spotify para refletir suas necessidades individuais e preferências pessoais.
+
+
+Iniciado 25.10.24 - VSCODE
+

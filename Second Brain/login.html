@@ -4,33 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="CSS/loginz.css">
-    <script>
-        function validarLogin(event) {
-            event.preventDefault();
-
-            const email = document.getElementById("email").value;
-            const senha = document.getElementById("senha").value;
-            const successMessage = document.getElementById("successMessage");
-            const errorMessage = document.getElementById("errorMessage");
-
-            successMessage.style.display = "none";
-            errorMessage.style.display = "none";
-
-            if (email === "admin" && senha === "admin") {
-                successMessage.style.display = "flex";
-            } else {
-                errorMessage.style.display = "flex";
-                if (email !== "admin" && senha !== "admin") {
-                    errorMessage.textContent = "Erro! Login e senha incorretos";
-                } else if (email !== "admin") {
-                    errorMessage.textContent = "Erro! Login incorreto";
-                } else {
-                    errorMessage.textContent = "Erro! Senha incorreta";
-                }
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="CSS/styleslogin.css">
 </head>
 <body>
     <div class="login-container">
@@ -48,10 +22,11 @@
         </form>
         
         <div id="successMessage" style="display: none;">
-            Login realizado com sucesso! <a href="index.html" id="okLink">Ok</a>
+            Login realizado com sucesso! <a href="home.html" id="okLink">Ok</a>
         </div>
         
         <div id="errorMessage" style="display: none;"></div>
     </div>
+    <script src="JS/scriptlogin.js"></script>
 </body>
 </html>

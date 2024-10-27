@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=scale1.0">
     <title>Second Brain</title>
-    <link rel="stylesheet" href="CSS/stylescalendar.css">
+    <link rel="stylesheet" href="CSS/styleshome.css">
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
-        
+    
 </head>
 <body>
     <div class="dashboard">
         <aside class="sidebar">
             <nav aria-label="Sidebar navigation">
                 <a href="home.html" aria-label="Home">
-                    <lord-icon src="https://cdn.lordicon.com/cnpvyndp.json" trigger="hover" colors="primary:#ffffff" style="width:40px;height:40px"></lord-icon>
+                    <lord-icon src="https://cdn.lordicon.com/cnpvyndp.json" trigger="hover" colors="primary:#66d7ee" style="width:40px;height:40px"></lord-icon>
                 </a>
                 <a href="#" aria-label="Notifications">
                     <lord-icon src="https://cdn.lordicon.com/jkzgajyr.json" trigger="hover" colors="primary:#ffffff" style="width:40px;height:40px"></lord-icon>
                 </a>
                 <a href="calendar.html" aria-label="Calendar">
-                    <lord-icon src="https://cdn.lordicon.com/abfverha.json" trigger="hover" colors="primary:#66d7ee" style="width:40px;height:40px"></lord-icon>
+                    <lord-icon src="https://cdn.lordicon.com/abfverha.json" trigger="hover" colors="primary:#ffffff" style="width:40px;height:40px"></lord-icon>
                 </a>
                 <a href="#" aria-label="Settings">
                     <lord-icon src="https://cdn.lordicon.com/lecprnjb.json" trigger="hover" colors="primary:#ffffff" style="width:40px;height:40px"></lord-icon>
@@ -45,38 +45,21 @@
                     <img src="images/profile.jpg" alt="Profile Picture">
                 </section>
             </header>
-
-            <div class="calendar-container">
-                <header>
-                    <button id="prev-month">◀</button>
-                    <h2 id="month-year"></h2>
-                    <button id="next-month">▶</button>
-                </header>
-                <div class="weekdays">
-                    <div>Dom</div>
-                    <div>Seg</div>
-                    <div>Ter</div>
-                    <div>Qua</div>
-                    <div>Qui</div>
-                    <div>Sex</div>
-                    <div>Sáb</div>
+            <section class="dashboard-grid">
+                <div class="card">
+                    <h2>Card 1</h2>
+                    <p>Informações do Card 1.</p>
                 </div>
-                <div id="days" class="days"></div>
-            </div>
-
-<!-- Modal para adicionar anotações -->
-            <div id="noteModal" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <h3>Anotação para <span id="selected-date"></span></h3>
-                    <textarea id="note-text" rows="5" placeholder="Escreva sua anotação..."></textarea>
-                    <button id="save-note">Salvar</button>
-                    <button id="delete-note" class="delete-note">Excluir</button>
+                <div class="card">
+                    <h2>Card 2</h2>
+                    <p>Informações do Card 2.</p>
                 </div>
-            </div>
+                <div class="card">
+                    <h2>Card 3</h2>
+                    <p>Informações do Card 3.</p>
+                </div>
+            </section>
         </main>
     </div>
-    <script src="JS/scriptcalendar.js"></script>
-
 </body>
 </html>

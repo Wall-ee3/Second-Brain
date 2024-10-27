@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="CSS/styleslogin.css">
+</head>
+<body>
+    <div class="login-container">
+        <h1>FAÇA SEU LOGIN<span>.</span></h1>
+        <form onsubmit="validarLogin(event)">
+            <label for="email">Email</label>
+            <input type="text" id="email" placeholder="Login">
+            
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" placeholder="********">
+            
+            <a href="mailto:wallacley@gmail.com" class="forgot-password">Esqueci a senha</a>
+            
+            <button type="submit">Entrar</button>
+        </form>
+        
+        <div id="successMessage" style="display: none;">
+            Login realizado com sucesso! <a href="home.html" id="okLink">Ok</a>
+        </div>
+        
+        <div id="errorMessage" style="display: none;"></div>
+    </div>
+    <script src="JS/scriptlogin.js"></script>
+</body>
+</html>

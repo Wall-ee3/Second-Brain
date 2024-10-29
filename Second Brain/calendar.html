@@ -2,11 +2,10 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=scale1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Second Brain</title>
     <link rel="stylesheet" href="CSS/stylescalendar.css">
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
-        
 </head>
 <body>
     <div class="dashboard">
@@ -15,20 +14,22 @@
                 <a href="home.html" aria-label="Home">
                     <lord-icon src="https://cdn.lordicon.com/cnpvyndp.json" trigger="hover" colors="primary:#ffffff" style="width:40px;height:40px"></lord-icon>
                 </a>
-                <a href="#" aria-label="Notifications">
+                <a href="document.html" aria-label="Document">
                     <lord-icon src="https://cdn.lordicon.com/jkzgajyr.json" trigger="hover" colors="primary:#ffffff" style="width:40px;height:40px"></lord-icon>
                 </a>
                 <a href="calendar.html" aria-label="Calendar">
                     <lord-icon src="https://cdn.lordicon.com/abfverha.json" trigger="hover" colors="primary:#66d7ee" style="width:40px;height:40px"></lord-icon>
                 </a>
-                <a href="#" aria-label="Settings">
+                <a href="config.html" aria-label="Config">
                     <lord-icon src="https://cdn.lordicon.com/lecprnjb.json" trigger="hover" colors="primary:#ffffff" style="width:40px;height:40px"></lord-icon>
                 </a>
-                <a href="#" aria-label="Logout">
+                <a href="share.html" aria-label="Share">
                     <lord-icon src="https://cdn.lordicon.com/ercyvufy.json" trigger="hover" colors="primary:#ffffff" style="width:40px;height:40px"></lord-icon>
                 </a>
                 <div style="margin-top: 190px;">
-                    <lord-icon src="https://cdn.lordicon.com/whtfgdfm.json" trigger="hover" colors="primary:#ffffff" style="width:40px;height:40px"></lord-icon>
+                    <a href="javascript:void(0);" aria-label="Logout" onclick="navigateToPage(event)">
+                        <lord-icon src="https://cdn.lordicon.com/whtfgdfm.json" trigger="hover" colors="primary:#ffffff" style="width:40px;height:40px"></lord-icon>
+                    </a>
                 </div>
             </nav>
         </aside>
@@ -75,7 +76,11 @@
             </div>
         </main>
     </div>
-    <script src="JS/scriptcalendar.js"></script>
-
+    <script src="JS/scriptCalendar.js"></script>
+   
+    <div class="theme-switch" id="themeSwitch">
+        <span>Alternar Tema</span>
+    </div>
+    
 </body>
 </html>

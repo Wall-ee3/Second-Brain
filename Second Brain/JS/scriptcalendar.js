@@ -83,3 +83,9 @@ const monthYear = document.getElementById('month-year');
         deleteNoteButton.onclick = deleteNote;
 
         renderCalendar();
+
+        function navigateToPage(event) {
+            event.preventDefault(); 
+            window.location.replace('login.html'); 
+        }
+        //vai voltar nao fia da mae kkkkkkkkkkkkkkkkkk

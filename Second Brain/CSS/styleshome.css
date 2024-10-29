@@ -1,12 +1,33 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+/* Reset */
+* {  
+    box-sizing: border-box;  
+    margin: 0;  
+    padding: 0;  
 }
 
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f4f0;
+    color: #333;
+}
+
+body.dark-theme {
+    background-color: #333;
+    color: #f0f0f0;
+}
+
+body.dark-theme .sidebar {
+    background-color: #555;
+}
+
+body.dark-theme .card,
+body.dark-theme .calendar,
+body.dark-theme .urgent-tasks,
+body.dark-theme .project-directory,
+body.dark-theme .new-comments,
+body.dark-theme .team-directory {
+    background-color: #444;
+    color: #f0f0f0;
 }
 
 .dashboard {
@@ -15,8 +36,8 @@ body {
 }
 
 .sidebar {
-    width: 80px; 
-    background-color: #1a2236; 
+    width: 80px;
+    background-color: #1a2236;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -116,4 +137,20 @@ button:hover {
 .delete-note {
     background-color: #ff4d4d;
     color: white;
+}
+
+.theme-switch {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+body.dark-theme .theme-switch {
+    background-color: #444;
 }

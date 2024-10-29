@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-
 body {
     display: flex;
     justify-content: center;
@@ -25,7 +24,6 @@ h1 {
 h1 span {
     color: #4b6cb7;
 }
-
 
 .login-container {
     background-color: #222;
@@ -82,22 +80,19 @@ button[type="submit"]:hover {
     background: linear-gradient(90deg, #3a5fa4, #101c3e);
 }
 
-
 #successMessage, #errorMessage {
-    position: absolute;
-    top: 20px;
+    position: fixed;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    max-width: 400px;
-    padding: 15px;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    max-width: 300px;
+    padding: 10px;
     border-radius: 5px;
     color: white;
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: none;
     z-index: 1;
 }
 
@@ -120,7 +115,6 @@ button[type="submit"]:hover {
 #errorMessage {
     background: linear-gradient(90deg, #e53935, #b71c1c);
 }
-
 
 .dashboard {
     display: flex;
@@ -168,4 +162,3 @@ button[type="submit"]:hover {
     height: 40px;
     border-radius: 50%;
 }
-
